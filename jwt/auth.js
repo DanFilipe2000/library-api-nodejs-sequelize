@@ -1,4 +1,6 @@
+// importa o jwt
 const jwt = require('jsonwebtoken');
+// recupera as variáveis de ambiente
 require('dotenv').config();
 
 const { JWT_SECRET } = process.env;
