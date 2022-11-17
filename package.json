@@ -1,0 +1,23 @@
+{
+  "name": "library-api",
+  "version": "1.0.0",
+  "description": "API para digitalizar processos de uma biblioteca",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanFilipe2000/library-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanFilipe2000/library-api/issues"
+  },
+  "homepage": "https://github.com/DanFilipe2000/library-api#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "jsonwebtoken": "^8.5.1"
+  }
+}
