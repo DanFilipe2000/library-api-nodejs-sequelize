@@ -5,6 +5,7 @@ module.exports = (sequelize, DataTypes) => {
       autor: DataTypes.STRING,
       editora: DataTypes.STRING,
       ano_de_publicacao: DataTypes.INTEGER,
+      disponivel: DataTypes.BOOLEAN,
     },
     { timestamps: false });
   
