@@ -2,7 +2,7 @@
 
 module.exports = {
   up: (queryInterface, DataTypes) => {
-    return queryInterface.createTable('BooksWithdraw', {
+    return queryInterface.createTable('BookWithdraws', {
       clientId: {
         allowNull: false,
         primaryKey: true,
@@ -31,6 +31,6 @@ module.exports = {
   },
 
   down: (queryInterface) => {
-    return queryInterface.dropTable('BooksWithdraw');
+    return queryInterface.dropTable('BookWithdraws');
   }
 };

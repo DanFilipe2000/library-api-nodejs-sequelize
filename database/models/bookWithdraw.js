@@ -7,13 +7,13 @@ module.exports = (sequelize, DataTypes) => {
     { timestamps: false });
 
     BookWithdraw.associate = (models) => {
-        models.BlogPost.belongsToMany(models.Client, {
+        models.Client.belongsToMany(models.Book, {
           as: 'clients',
           through: 'BookWithdraw',
           foreignKey: 'clientId',
           otherKey: 'bookId',
         });
-        models.Category.belongsToMany(models.BlogPost, {
+        models.Book.belongsToMany(models.Client, {
           as: 'books',
           through: 'BookWithdraw',
           foreignKey: 'bookId',
