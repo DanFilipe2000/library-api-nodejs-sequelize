@@ -28,4 +28,22 @@ const withdrawDelete = async (req, res) => {
   }
 }
 
-module.exports = { create, withdrawUpdate, withdrawDelete };
+const getAll = async (_req, res) => {
+  try {
+    const result = await bookService.findAll();
+    res.status(200).json(result);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+}
+
+const getById = async (req, res) => {
+  try {
+    const result = await bookService.findByPk(req.params);
+    res.status(200).json(result);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+}
+
+module.exports = { create, withdrawUpdate, withdrawDelete, getAll, getById };
