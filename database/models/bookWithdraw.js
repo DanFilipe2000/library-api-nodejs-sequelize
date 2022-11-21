@@ -2,7 +2,7 @@ module.exports = (sequelize, DataTypes) => {
     const BookWithdraw = sequelize.define('BookWithdraw', {
       clientId: DataTypes.INTEGER,
       bookId: DataTypes.INTEGER,
-      dataDeDevolução: DataTypes.DATE,
+      dataDeDevolucao: DataTypes.DATE,
     },
     { timestamps: false });
 

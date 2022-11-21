@@ -5,6 +5,7 @@ const { tokenValidation } = require('../middleware/tokenAuth');
 const router = Router();
 
 router.post('/', tokenValidation, bookController.create);
-router.post('/withdraw', tokenValidation, bookController.update);
+router.put('/withdraw', tokenValidation, bookController.withdrawUpdate);
+router.delete('/devolution/:id', tokenValidation, bookController.withdrawDelete);
 
 module.exports = { router };

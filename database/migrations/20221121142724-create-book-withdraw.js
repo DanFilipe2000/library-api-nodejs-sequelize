@@ -23,7 +23,7 @@ module.exports = {
         },
         type: DataTypes.INTEGER,
       },
-      dataDeDevolução: {
+      dataDeDevolucao: {
         allowNull: false,
         type: DataTypes.DATE,
       },

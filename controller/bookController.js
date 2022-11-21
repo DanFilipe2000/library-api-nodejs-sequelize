@@ -10,7 +10,7 @@ const create = async (req, res) => {
   }
 }
 
-const update = async (req, res) => {
+const withdrawUpdate = async (req, res) => {
   try {
     const result = await bookWithdrawService.createAndUpdate(req.body);
     res.status(200).json(result);
@@ -19,4 +19,13 @@ const update = async (req, res) => {
   }
 }
 
-module.exports = { create, update };
+const withdrawDelete = async (req, res) => {
+  try {
+    const result = await bookWithdrawService.deleteAndUpdate(req.params, req.body);
+    res.status(200).json({ message: result });
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+}
+
+module.exports = { create, withdrawUpdate, withdrawDelete };
