@@ -1,7 +1,11 @@
-const { Book, BookWithdraw } = require('../database/models');
+const { Client, Book, BookWithdraw } = require('../database/models');
 const moment = require('moment'); // Biblioteca externa para calcular a diferenã de dias entre datas
 
 const createAndUpdate = async ({ clientId, bookId }) => {
+  // Verifica se o cliente existe
+  const client = await Client.findOne({ where: { id: clientId }})
+  if (!client) throw new Error('O cliente informado não existe');
+
   // Verifica se o livro já foi retirado da biblioteca
   const verify = await BookWithdraw.findOne({ where: { bookId } });
   if (verify) throw new Error('O livro já foi retirado na biblioteca');
@@ -21,10 +25,10 @@ const createAndUpdate = async ({ clientId, bookId }) => {
   // Registra no banco de dados a retirada do livro e muda o status do livro para indisposnivel
   const bookWithdrawCreate = await BookWithdraw.create({ clientId, bookId, dataDeDevolucao});
   await Book.update({ disponivel: false }, { where: { id: bookId }});
-  const bookAtt = await Book.findOne({ where: { id: bookId }})
+  const bookAtt = await Book.findOne({ where: { id: bookId }});
 
   // Retorna para controller a data de devolução do livro
-  return [bookWithdrawCreate, bookAtt];
+  return [bookWithdrawCreate, client, bookAtt];
 };
 
 const deleteAndUpdate = async ({ id }, { data }) => {

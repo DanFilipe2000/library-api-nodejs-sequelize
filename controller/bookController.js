@@ -28,9 +28,12 @@ const withdrawDelete = async (req, res) => {
   }
 }
 
-const getAll = async (_req, res) => {
+const getAll = async (req, res) => {
   try {
-    const result = await bookService.findAll();
+    const result = await bookService.findAll(req.query);
+    if (result.length === 0) {
+      return res.status(400).json({ message: "Nenhum registro foi encontrado pro filtro selecionado" });
+    }
     res.status(200).json(result);
   } catch (error) {
     res.status(400).json({ message: error.message });
