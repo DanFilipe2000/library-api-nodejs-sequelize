@@ -10,7 +10,7 @@ const createAndUpdate = async ({ clientId, bookId }) => {
   if (!verifyBook) throw new Error('O livro não existe');
 
   // Verifica se o cliente ainda pode pegar livros na biblioteca que tem um limite de 3 livros por cliente
-  const bookQty = await BookWithdraw.find({ where: { bookId } });
+  const bookQty = await BookWithdraw.findAll({ where: { bookId } });
   if (bookQty.length === 3) throw new Error('O cliente já pegou a quantidade máxima de livros');
 
   // Calcula a data para devolução do livro
@@ -19,10 +19,10 @@ const createAndUpdate = async ({ clientId, bookId }) => {
   
   // Registra no banco de dados a retirada do livro e muda o status do livro para indisposnivel
   const bookWithdrawCreate = await BookWithdraw.create({ clientId, bookId, dataDeDevolução});
-  await Book.update({ disponivel: false }, { where: { id: bookId }});
+  const bookAtt = await Book.update({ disponivel: false }, { where: { id: bookId }});
 
   // Retorna para controller a data de devolução do livro
-  return bookWithdrawCreate.dataDeDevolução;
+  return [bookWithdrawCreate, bookAtt[0]];
 };
 
 module.exports = { createAndUpdate };

@@ -13,7 +13,7 @@ const create = async (req, res) => {
 const update = async (req, res) => {
   try {
     const result = await bookWithdrawService.createAndUpdate(req.body);
-    res.status(200).json(`Sucesso! Devolva o livro até o dia ${ result.toLocaleString("pt-BR").split(' ')[0] }`);
+    res.status(200).json(result);
   } catch (err) {
     res.status(400).json({ message: err.message });
   }

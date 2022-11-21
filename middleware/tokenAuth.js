@@ -8,11 +8,10 @@ const tokenValidation = (req, res, next) => {
     }
 
     try {
-        const dataToken = verifyToken(authorization);
-        req.userId = dataToken.id;
+        verifyToken(authorization);
         next();
     } catch (error) { 
-        return res.status(401).json({ message: 'Expired or invalid token' });
+        return res.status(401).json({ message: error });
     }
 };
 
