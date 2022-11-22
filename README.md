@@ -71,9 +71,17 @@ API foi criada para que no futuro pudesse ser implementada num sistema de gerenc
 * [Sequelize](https://sequelize.org/)
 * [JWT](https://jwt.io/)
 
+
+## Recomendações de ferramentas:
+
+Recomendo que para rodar essa API seja utilizado um das seguintes ferramentas:
+
+* [Postman](https://www.postman.com/)
+* [Insomnia](https://insomnia.rest/download)
+
 ## 🖇️ Rotas e endpoints
 
-### 01 - Na rota `/login`
+### 01 - Na rota `/login` com o método `POST`
 
 Deverá receber no body:
 ```
@@ -84,12 +92,13 @@ Deverá receber no body:
 ```
 Esses são os dados do administrador responsável pelo sistema e já está cadastrado no banco de dados.
 
-Retornará um token como no exemplo abaixo</summary>
+Retornará um token como no exemplo abaixo
 ```
 {
 	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiQWRtaW5pc3RyYWRvciIsImlhdCI6MTY2OTA3MzU0OCwiZXhwIjoxNjY5MTU5OTQ4fQ.5DSxpFgQt9h66BeWdo91KchI68MR6mYt4AjpZmvblB4"
 }
 ```
+Esse token deverá ser adicionado a header nas demais requisições.
 
 ## ✒️ Autor
 
