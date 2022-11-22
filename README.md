@@ -100,6 +100,35 @@ Retornará um token como no exemplo abaixo
 ```
 Esse token deverá ser adicionado a header nas demais requisições.
 
+### 01 - Na rota `/client` com o método `POST`
+
+Deverá receber os dados do cliente que será cadastrado:
+```
+{
+	"nome": "Fulano",
+	"matricula": "18293",
+	"telefone": "61993975072"
+}
+```
+Se o cadastro der certo a API retornará um `STATUS HTTP 200`e deverá retornar:
+
+```
+{
+	"id": 1,
+	"nome": "Fulano",
+	"matricula": "18293",
+	"telefone": "61993975072"
+}
+```
+Se o usuário já tiver sido cadastrado anteriormente a API retornará `STATUS HTTP 400` e devera retornar:
+
+
+```
+{
+	"message": "O cliente já foi cadastrado"
+}
+```
+
 ## ✒️ Autor
 
 * **Daniel Filipe** - *API* - [DanFilipe2000](https://github.com/DanFilipe2000)
