@@ -92,7 +92,7 @@ Deverá receber no body:
 ```
 Esses são os dados do administrador responsável pelo sistema e já está cadastrado no banco de dados.
 
-Retornará um token como no exemplo abaixo
+Se o login der certo a API responderá com `STATUS HTTP 200` e deverá retornar um token:
 ```
 {
 	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiQWRtaW5pc3RyYWRvciIsImlhdCI6MTY2OTA3MzU0OCwiZXhwIjoxNjY5MTU5OTQ4fQ.5DSxpFgQt9h66BeWdo91KchI68MR6mYt4AjpZmvblB4"
@@ -100,7 +100,7 @@ Retornará um token como no exemplo abaixo
 ```
 Esse token deverá ser adicionado a header nas demais requisições.
 
-### 01 - Na rota `/client` com o método `POST`
+### 02 - Na rota `/client` com o método `POST`
 
 Deverá receber os dados do cliente que será cadastrado:
 ```
@@ -110,7 +110,7 @@ Deverá receber os dados do cliente que será cadastrado:
 	"telefone": "61993975072"
 }
 ```
-Se o cadastro der certo a API retornará um `STATUS HTTP 200`e deverá retornar:
+Se o cadastro der certo a API responderá com `STATUS HTTP 201` e deverá retornar:
 
 ```
 {
@@ -120,12 +120,70 @@ Se o cadastro der certo a API retornará um `STATUS HTTP 200`e deverá retornar:
 	"telefone": "61993975072"
 }
 ```
-Se o usuário já tiver sido cadastrado anteriormente a API retornará `STATUS HTTP 400` e devera retornar:
+Se o cliente já tiver sido cadastrado anteriormente a API responderá com `STATUS HTTP 400` e deverá retornar:
 
 
 ```
 {
 	"message": "O cliente já foi cadastrado"
+}
+```
+
+### 03 - Na rota `/autor` com o método `POST`
+
+Para cadastrar um autor, deverá receber no body:
+```
+{
+	"nome": "Machado de Assis",
+	"pais_de_origem": "Brasil"
+}
+```
+
+Se o cadastro der certo a API responderá com `STATUS HTTP 201` e deverá retornar:
+```
+{
+	"id": 1,
+	"nome": "Machado de Assis",
+	"pais_de_origem": "Brasil"
+}
+```
+Se o autor já tiver sido cadastrado anteriormente a API responderá com `STATUS HTTP 400` e deverá retornar:
+```
+{
+	"message": "O Autor já foi cadastrado"
+}
+```
+
+### 04 - Na rota `/book` com o método `POST`
+
+Para cadastrar um livro, deverá receber no body:
+```
+{
+	"isbn": "978-3-16-148410-0",
+  	"nome": "Memórias Póstumas de Bras Cubas",
+	"autor": "Machado de Assis",
+	"editora": "Tipografia Nacional",
+	"ano_de_publicacao": 1881,
+	"disponivel": true
+}
+```
+
+Se o cadastro der certo a API responderá com `STATUS HTTP 201` e deverá retornar:
+```
+{
+	"id": 3,
+	"isbn": "978-3-16-148410-0",
+	"nome": "Memórias Póstumas de Bras Cubas",
+	"autor": "Machado de Assis",
+	"editora": "Tipografia Nacional",
+	"ano_de_publicacao": 1881,
+	"disponivel": true
+}
+```
+Se o livro já tiver sido cadastrado anteriormente a API responderá com `STATUS HTTP 400` e deverá retornar:
+```
+{
+	"message": "O Livro já foi cadastrado"
 }
 ```
 
