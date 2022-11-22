@@ -1,5 +1,3 @@
-API para digitalizar processos padrões de uma biblioteca.
-
 # Library API
 
 API para digitalizar processos padrões de uma biblioteca.
