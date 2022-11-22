@@ -90,7 +90,7 @@ Deverá receber no body:
  "password": "123456"
 }
 ```
-Esses são os dados do administrador responsável pelo sistema e já está cadastrado no banco de dados.
+Esses são os dados do administrador responsável pelo sistema e já estão cadastrados no banco de dados.
 
 Se o login der certo a API responderá com `STATUS HTTP 200` e deverá retornar um token:
 ```
