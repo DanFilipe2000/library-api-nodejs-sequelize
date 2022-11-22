@@ -1,8 +1,8 @@
-API para digitalizar processos padrões de um biblioteca.
+API para digitalizar processos padrões de uma biblioteca.
 
 # Library API
 
-API para digitalizar processos padrões de um biblioteca.
+API para digitalizar processos padrões de uma biblioteca.
 
 ## 🚀 Começando
 
@@ -29,7 +29,7 @@ https://nodejs.org/en/download/
 
 ### 🔧 Instalação
 
-Para clonar o projeto em sua máguina siga as instruções:
+Para clonar o projeto em sua máquina siga as instruções:
 
 ```
 git clone git@github.com:DanFilipe2000/library-api.git
@@ -84,16 +84,12 @@ Deverá receber no body:
 ```
 Esses são os dados do administrador responsável pelo sistema e já está cadastrado no banco de dados.
 
-<details>
-  <summary>Retornará um token como no exemplo abaixo</summary>
+Retornará um token como no exemplo abaixo</summary>
 ```
 {
 	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiQWRtaW5pc3RyYWRvciIsImlhdCI6MTY2OTA3MzU0OCwiZXhwIjoxNjY5MTU5OTQ4fQ.5DSxpFgQt9h66BeWdo91KchI68MR6mYt4AjpZmvblB4"
 }
 ```
-
-
-</details>
 
 ## ✒️ Autor
 
