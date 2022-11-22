@@ -72,7 +72,7 @@ API foi criada para que no futuro pudesse ser implementada num sistema de gerenc
 
 ## Recomendações de ferramentas:
 
-Recomendo que para rodar essa API seja utilizado um das seguintes ferramentas:
+Recomendo que para rodar essa API seja utilizado uma das seguintes ferramentas:
 
 * [Postman](https://www.postman.com/)
 * [Insomnia](https://insomnia.rest/download)
